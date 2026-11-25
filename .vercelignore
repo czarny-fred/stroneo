@@ -1,0 +1,5 @@
+node_modules
+.astro
+dist
+README.md
+.env*

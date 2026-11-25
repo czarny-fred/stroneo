@@ -1,0 +1,104 @@
+---
+import '../styles/global.css';
+const services = [
+  { number: '01', title: 'Strony firmowe', text: 'Twoja oferta, doświadczenie i sposób pracy — przedstawione tak, żeby klient od razu wiedział, dlaczego warto się odezwać.', tags: 'Strategia · Projekt · Wdrożenie' },
+  { number: '02', title: 'Landing pages', text: 'Jedna usługa. Jeden konkretny cel. Strona, która prowadzi od pierwszego zainteresowania do zapytania o ofertę.', tags: 'Kampanie · Usługi · Kontakt' },
+  { number: '03', title: 'Nowy rozdział strony', text: 'Firma się rozwija, a strona została w tyle? Porządkujemy treści, odświeżamy wygląd i upraszczamy drogę do kontaktu.', tags: 'Redesign · Mobile · Optymalizacja' },
+];
+const steps = [
+  ['Najpierw rozumiemy.', 'Rozmawiamy o Twojej firmie, klientach i tym, co strona ma dla Ciebie zrobić. Wspólnie ustalamy zakres.'],
+  ['Potem projektujemy.', 'Układamy treści i nadajemy im formę. Widzisz kierunek projektu i masz przestrzeń na swoje uwagi.'],
+  ['Na końcu dopracowujemy.', 'Budujemy stronę, sprawdzamy ją na różnych ekranach i przygotowujemy do publikacji. Każdy szczegół ma swoje zadanie.'],
+];
+const faqs = [
+  ['Dla jakich firm tworzycie strony?', 'Skupiamy się na firmach usługowych i lokalnych biznesach. Projekt zaczynamy od poznania Twojej oferty i pytań, które zadają Twoi klienci.'],
+  ['Czy muszę mieć gotowe teksty i zdjęcia?', 'Nie musisz mieć wszystkiego na starcie. Przydadzą się informacje o usługach, logo i zdjęcia Twojej pracy. Na tej podstawie możemy zaplanować treści i wskazać, czego jeszcze potrzebujemy.'],
+  ['Ile kosztuje strona i jak długo trwa realizacja?', 'To zależy od liczby podstron, potrzebnych funkcji i dostępnych materiałów. Zakres, wycenę i harmonogram ustalamy przed rozpoczęciem prac.'],
+  ['Czy strona będzie działać na telefonie?', 'Tak. Układ, czytelność tekstów i przyciski kontaktowe projektujemy również z myślą o osobach, które przeglądają stronę na telefonie.'],
+];
+---
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="STRONEO — przemyślane strony internetowe dla firm usługowych. Strategia, projekt i wdrożenie. Dobra strona zaczyna się od zrozumienia Twojego biznesu." />
+    <meta name="theme-color" content="#f6f4ef" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:title" content="STRONEO — Dobra strona. Dobry początek." />
+    <meta property="og:description" content="Tworzymy przemyślane strony internetowe dla firm usługowych. Od pierwszej rozmowy do ostatniego detalu." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="STRONEO — Dobra strona. Dobry początek." />
+    <meta name="twitter:description" content="Przemyślane strony internetowe dla firm usługowych." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>STRONEO — Dobra strona. Dobry początek.</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <header class="header">
+      <a class="brand" href="#top" aria-label="STRONEO — strona główna">stroneo<span class="brand-dot">.</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+      <nav id="navigation" aria-label="Nawigacja główna">
+        <a href="#oferta">Co robimy</a><a href="#podejscie">Jak pracujemy</a><a href="#projekty">Projekty</a><a class="nav-cta" href="#kontakt">Porozmawiajmy <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img class="hero-image" src="/images/workshop.png" width="1950" height="760" alt="Rzemieślnicze narzędzia na drewnianej ścianie warsztatu" fetchpriority="high" />
+        <div class="hero-shade"></div>
+        <div class="hero-inner wrap">
+          <p class="eyebrow light"><span class="small-circle"></span> Studio stron internetowych</p>
+          <h1 id="hero-title">Dobra strona.<br /><em>Dobry początek.</em></h1>
+          <p class="hero-description">Ty znasz swój fach. My przekładamy go na stronę,<br class="desktop-break" /> która buduje zaufanie i ułatwia pierwszy kontakt.</p>
+          <a class="button cream" href="#kontakt">Zacznijmy od rozmowy <span aria-hidden="true">↗</span></a>
+          <div class="hero-bottom"><span>Przemyślane. Dopracowane. Twoje.</span><a href="#oferta">Poznaj STRONEO <span aria-hidden="true">↓</span></a></div>
+        </div>
+      </section>
+      <div class="principles wrap"><span>Biznes w centrum</span><i></i><span>Design z sensem</span><i></i><span>Technologia w tle</span><i></i><span>Detal ma znaczenie</span></div>
+      <section class="section wrap" id="oferta">
+        <div class="section-heading"><p class="eyebrow">01 / Co robimy</p><div><h2>Twój fach zasługuje<br />na <em>dobrą stronę.</em></h2><p>Pomagamy firmom usługowym pokazać swoją wartość w internecie. Łączymy czytelne treści, przemyślany projekt i sprawne działanie.</p></div></div>
+        <div class="services">{services.map(service => <article class="service"><span class="service-number">{service.number}<span aria-hidden="true">↗</span></span><h3>{service.title}</h3><p>{service.text}</p><div class="service-tags">{service.tags}</div><a class="cover-link" href="#kontakt" aria-label={`Porozmawiajmy: ${service.title}`}></a></article>)}</div>
+      </section>
+      <section class="partnership" id="o-nas">
+        <div class="partnership-image"><img src="/images/partnership.png" width="950" height="371" alt="Detal eleganckiej marynarki — dbałość o profesjonalny wizerunek" loading="lazy" /></div>
+        <div class="partnership-copy"><p class="eyebrow light">Po tej samej stronie</p><h2>Dobry projekt zaczyna się<br />od <em>zrozumienia.</em></h2><p>Za każdą firmą stoi ktoś, kto zna się na swojej pracy. Chcemy, żeby było to widać także w internecie.</p><p>W STRONEO zaczynamy od Twojej oferty i Twoich klientów. Dopiero potem wybieramy układ, słowa i technologię. Tak powstaje strona, w której rozpoznajesz własną firmę.</p><a class="text-link" href="#podejscie">Poznaj nasz sposób pracy <span aria-hidden="true">↗</span></a></div>
+      </section>
+      <section class="section wrap process" id="podejscie">
+        <div><p class="eyebrow">02 / Jak pracujemy</p><h2>Prosty proces.<br /><em>Wspólny kierunek.</em></h2><p class="process-note">Bez zbędnego żargonu.<br />Z jasnym planem na każdy etap.</p></div>
+        <div class="steps">{steps.map(([title, description], index) => <article><span class="step-number">0{index + 1}</span><div><h3>{title}</h3><p>{description}</p></div></article>)}</div>
+      </section>
+      <section class="vision"><img src="/images/vision.png" width="1950" height="1174" alt="Dłoń i rozproszone drobiny w świetle na ciemnym tle" loading="lazy" /><div class="wrap vision-copy"><p class="eyebrow light">Rzemiosło w cyfrowym świecie</p><h2>Technologia daje możliwości.<br /><em>Sens nadaje Twój biznes.</em></h2><p>Dobre wrażenie to początek. Czytelna oferta, wygodna obsługa<br class="desktop-break" /> i prosty kontakt sprawiają, że strona staje się użyteczna.</p></div></section>
+      <section class="section wrap" id="projekty">
+        <div class="section-heading"><p class="eyebrow">03 / Kierunki projektowe</p><div><h2>Różne firmy.<br /><em>Ta sama dbałość.</em></h2><p>Wybrane koncepcje stron z naszego warsztatu. Każda pokazuje inny sposób opowiadania o usługach i prowadzenia klienta do kontaktu.</p></div></div>
+        <div class="projects">
+          <article class="project"><div class="project-visual electric"><span class="project-label">Koncepcja / Firma usługowa</span><div class="project-wordmark">DYNAMIX<span>ELECTRIC</span></div><img src="/images/electric-work.jpg" width="1200" height="800" alt="Prace przy instalacji elektrycznej — materiał z koncepcji Dynamix Electric" loading="lazy" /><p>Powering your<br /><strong>next project.</strong></p></div><div class="project-caption"><div><h3>Usługi, które widać.</h3><p>Przejrzysta oferta · Mocny charakter</p></div><span aria-hidden="true">01</span></div></article>
+          <article class="project"><div class="project-visual local"><span class="project-label">Koncepcja / Lokalny biznes</span><div class="project-wordmark">DENNIE<span>ELECTRIC</span></div><img src="/images/local-team.jpg" width="1200" height="800" alt="Samochody firmy elektrycznej — materiał z koncepcji Dennie Electric" loading="lazy" /><p>Local expertise.<br /><strong>Real commitment.</strong></p></div><div class="project-caption"><div><h3>Zaufanie zaczyna się lokalnie.</h3><p>Wizerunek firmy · Łatwy kontakt</p></div><span aria-hidden="true">02</span></div></article>
+        </div>
+      </section>
+      <section class="faq-section wrap"><div><p class="eyebrow">Dobrze wiedzieć</p><h2>Zanim<br /><em>zaczniemy.</em></h2></div><div class="faqs">{faqs.map(([question, answer]) => <details><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
+      <section class="contact" id="kontakt"><div class="wrap contact-inner"><div><p class="eyebrow">04 / Twój następny krok</p><h2>Zróbmy coś<br /><em>dobrego.</em></h2><p>Opowiedz o swojej firmie i stronie, której potrzebujesz.<br />Dobry projekt zaczyna się od kilku prostych pytań.</p></div><form id="brief-form"><div class="form-row"><label>Jak masz na imię?<input name="name" autocomplete="given-name" required placeholder="Twoje imię" maxlength="100" /></label><label>Twój e-mail<input name="email" type="email" autocomplete="email" required placeholder="Adres e-mail" maxlength="200" /></label></div><label>Czego potrzebuje Twoja firma?<select name="service"><option>Nowa strona firmowa</option><option>Landing page</option><option>Odświeżenie obecnej strony</option><option>Chcę omówić pomysł</option></select></label><label>Kilka słów o projekcie<textarea name="message" rows="3" required minlength="10" maxlength="5000" placeholder="Czym się zajmujesz? Co chcesz pokazać klientom?"></textarea></label><button class="button dark" type="submit">Przygotuj brief <span aria-hidden="true">↗</span></button><p class="form-note">Pobierzesz opis projektu jako plik. Formularz nie wysyła danych.</p><p id="form-status" role="status" aria-live="polite"></p></form></div></section>
+    </main>
+    <footer class="wrap"><div class="footer-top"><a class="brand" href="#top">stroneo<span class="brand-dot">.</span></a><p>Dobra strona Twojego biznesu.</p><a href="#top">Do góry <span aria-hidden="true">↑</span></a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} STRONEO</span><span>Projektowane z myślą. Budowane z dbałością.</span></div></footer>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+      const nav = document.querySelector<HTMLElement>('#navigation');
+      const closeMenu = () => { toggle?.setAttribute('aria-expanded', 'false'); nav?.classList.remove('is-open'); };
+      toggle?.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); nav?.classList.toggle('is-open', open); });
+      nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => { if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') { closeMenu(); toggle.focus(); } });
+      document.querySelector<HTMLFormElement>('#brief-form')?.addEventListener('submit', event => {
+        event.preventDefault();
+        const form = event.currentTarget as HTMLFormElement;
+        if (!form.reportValidity()) return;
+        const data = new FormData(form);
+        const content = `STRONEO — brief projektu\n\nImię: ${data.get('name')}\nE-mail: ${data.get('email')}\nUsługa: ${data.get('service')}\n\nOpis projektu:\n${data.get('message')}\n`;
+        const url = URL.createObjectURL(new Blob([content], { type: 'text/plain;charset=utf-8' }));
+        const link = document.createElement('a'); link.href = url; link.download = 'stroneo-brief.txt'; link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        const status = document.querySelector('#form-status');
+        if (status) status.textContent = 'Brief jest gotowy do zapisania. Dane nie zostały wysłane.';
+      });
+    </script>
+  </body>
+</html>
